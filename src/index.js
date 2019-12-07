@@ -36,7 +36,8 @@ const Product = ({
 const App = () => {
   const [shopData, setShopData] = React.useState({});
   React.useEffect(() => {
-    if (shop) {
+    const shopcity = document.getElementById("shopcity");
+    if (shopcity) {
       setShopData(shop);
     }
   }, []);
