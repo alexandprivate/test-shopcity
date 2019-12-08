@@ -4,7 +4,16 @@ import "./styles.css";
 
 const Image = ({ source = "" }) => {
   return (
-    <img src={source} style={{ width: 200, border: "solid 1px #ededed" }} />
+    <img
+      alt=""
+      src={source}
+      style={{
+        width: 200,
+        height: 200,
+        background: "#ededed",
+        border: "solid 1px #ededed"
+      }}
+    />
   );
 };
 
