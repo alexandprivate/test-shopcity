@@ -33,15 +33,24 @@ const Product = ({
   );
 };
 
-const App = () => {
-  const [shopData, setShopData] = React.useState({});
+const useShopcity = () => {
+  const [shop, setShop] = React.useState({});
+
   React.useEffect(() => {
     const shopcity = document.getElementById("shopcity");
     if (shopcity) {
-      setShopData(shop);
+      // let data = shopcity.innerHTML;
+      let dataJSON = JSON.parse(shopcity.innerHTML);
+      // console.log(data);
+      setShop(dataJSON);
     }
   }, []);
-  const { products = [], details = {} } = shopData;
+
+  return shop;
+};
+
+const App = () => {
+  const { products = [], details = {} } = useShopcity();
   return (
     <div className="App">
       <h1>Hello CodeSandbox</h1>
