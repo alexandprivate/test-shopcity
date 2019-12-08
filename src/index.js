@@ -24,10 +24,14 @@ const Product = ({
       <Image source={image} />
       <p>{name}</p>
       <p>
-        {currency}
-        {prices.old ? <i style={oldPriceStyle}>{prices.old}</i> : ""}
-        {currency}
-        {prices.current}
+        {prices.old ? (
+          <i style={oldPriceStyle}>
+            {currency} {prices.old}
+          </i>
+        ) : (
+          ""
+        )}
+        {currency} {prices.current}
       </p>
     </div>
   );
